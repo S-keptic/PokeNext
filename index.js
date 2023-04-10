@@ -16,7 +16,7 @@ client.on('interactionCreate', async interaction => {
   if (interaction.commandName === "pokemon"){
     const pokemonName = interaction.options.get('pokemon-name')
     const pokemon = async () =>{
-        let data = await fetch(`https://pokeapi.co/api/v2/pokemon/blaziken`)
+        let data = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
         let response = await data.json()
         let result = response.sprites.front_default
         await interaction.reply(result)
